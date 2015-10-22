@@ -52,14 +52,14 @@ var bio = {
         header.append(HTMLskillsStart);
         var skillsList = $("ul#skills");
 
-        for (var skillIndex in this.skills) {
-            var formattedSkill = HTMLskills.replace("%data%", this.skills[skillIndex]);
+        for(var i = 0; i < this.skills.length; i++) {
+            var formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
             skillsList.append(formattedSkill);
         }
 
     }
 
-}
+};
 
 var work = {
     jobs: [
@@ -87,8 +87,8 @@ var work = {
         workExperience = $(".work-entry");
 
         // build jobs
-        for (var jobIndex in this.jobs) {
-            var job = this.jobs[jobIndex];
+        for(var i = 0; i < this.jobs.length; i++) {
+            var job = this.jobs[i];
 
             var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
@@ -102,7 +102,7 @@ var work = {
             workExperience.append(formattedDescription);
         }
     }
-}
+};
 
 var education = {
 
@@ -130,8 +130,8 @@ var education = {
         var education = $("#education");
 
         // build schools info
-        for (var schoolIndex in this.schools) {
-            var school = this.schools[schoolIndex];
+        for(var i = 0; i < this.schools.length; i++) {
+            var school = this.schools[i];
 
             education.append(HTMLschoolStart);
             var schoolBlock =  $(".education-entry").last();
@@ -151,8 +151,8 @@ var education = {
         education.append(HTMLonlineClasses);
 
         // build online courses info
-        for (var courseIndex in this.onlineCourses) {
-            var onlineCourse = this.onlineCourses[courseIndex];
+        for(var j = 0; i < this.onlineCourses.length; j++) {
+            var onlineCourse = this.onlineCourses[j];
 
             education.append(HTMLschoolStart);
             var onlineCourseBlock =  $(".education-entry").last();
@@ -167,7 +167,7 @@ var education = {
             onlineCourseBlock.append(formattedOnlineUrl);
         }
     }
-}
+};
 
 var other = {
 
@@ -184,8 +184,8 @@ var other = {
         var projectsBlock = $("#projects");
 
         // build project info
-        for (var projectIndex in this.projects) {
-            var project = this.projects[projectIndex];
+        for(var i = 0; i < this.projects.length; i++) {
+            var project = this.projects[i];
 
             projectsBlock.append(HTMLprojectStart);
             var projectEntry =  $(".project-entry").last();
@@ -201,7 +201,7 @@ var other = {
             projectEntry.append(formattedProjectImage);
         }
     }
-}
+};
 
 var resumeBuilder = {
 
@@ -213,7 +213,7 @@ var resumeBuilder = {
 
         $("#mapDiv").append(googleMap);
     }
-}
+};
 
 resumeBuilder.build();
 
